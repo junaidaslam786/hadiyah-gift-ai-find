@@ -11,17 +11,6 @@ const HeroSection: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-tiffany-600 font-arabic">هدية</h2>
       </div>
       
-      {/* Floating Gift Boxes - Improved 3D placement */}
-      <div className="absolute top-1/4 right-1/4 z-10 transform-gpu rotate-z-5">
-        <FloatingGiftBox size="lg" delay={0.2} />
-      </div>
-      <div className="absolute bottom-1/4 left-1/6 z-10 transform-gpu -rotate-z-3">
-        <FloatingGiftBox size="sm" delay={1.5} />
-      </div>
-      <div className="absolute top-2/3 right-1/6 z-10 transform-gpu rotate-z-2">
-        <FloatingGiftBox size="sm" delay={0.8} />
-      </div>
-      
       {/* Main Content */}
       <div className="container mx-auto px-8 text-center z-20 relative mt-16">
         <div className="max-w-4xl mx-auto">
@@ -35,25 +24,39 @@ const HeroSection: React.FC = () => {
             باستخدام الذكاء الاصطناعي، نرشح لك أفضل الهدايا حسب المناسبة والشخص والميزانية.
           </p>
           
-          <Button 
-            size="lg" 
-            className="bg-tiffany-500 hover:bg-tiffany-600 text-white text-xl px-8 py-6 rounded-xl tiffany-glow animate-glow"
-            onClick={() => document.getElementById('gift-finder')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            ابدأ الآن
-          </Button>
+          {/* Button with Gift Boxes positioned around it */}
+          <div className="relative py-6 px-4 inline-block">
+            {/* Floating Gift Boxes - positioned around the button */}
+            <div className="absolute -right-24 -top-16 z-10">
+              <FloatingGiftBox size="lg" delay={0.2} rotation={-5} />
+            </div>
+            <div className="absolute -left-20 -bottom-10 z-10">
+              <FloatingGiftBox size="sm" delay={0.8} rotation={8} />
+            </div>
+            <div className="absolute left-1/2 -bottom-28 transform -translate-x-1/2 z-10">
+              <FloatingGiftBox size="md" delay={1.5} rotation={-3} />
+            </div>
+            
+            <Button 
+              size="lg" 
+              className="bg-tiffany-500 hover:bg-tiffany-600 text-white text-xl px-8 py-6 rounded-xl tiffany-glow animate-glow"
+              onClick={() => document.getElementById('gift-finder')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              ابدأ الآن
+            </Button>
+          </div>
         </div>
       </div>
       
-      {/* Enhanced Decorative Elements with better sparkles */}
-      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-tiffany-400 rounded-full animate-sparkle"></div>
-      <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-tiffany-300 rounded-full animate-sparkle" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute top-1/2 right-1/5 w-1.5 h-1.5 bg-tiffany-500 rounded-full animate-sparkle" style={{ animationDelay: '2.5s' }}></div>
-      <div className="absolute top-2/3 left-1/3 w-2.5 h-2.5 bg-tiffany-400 rounded-full animate-sparkle" style={{ animationDelay: '0.8s' }}></div>
-      <div className="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-tiffany-200 rounded-full animate-sparkle" style={{ animationDelay: '3s' }}></div>
-      <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-tiffany-300 rounded-full animate-sparkle" style={{ animationDelay: '1.2s' }}></div>
-      <div className="absolute bottom-1/2 left-1/5 w-1 h-1 bg-tiffany-400 rounded-full animate-sparkle" style={{ animationDelay: '2.2s' }}></div>
-      <div className="absolute top-3/4 right-1/2 w-2 h-2 bg-tiffany-200 rounded-full animate-sparkle" style={{ animationDelay: '0.5s' }}></div>
+      {/* Enhanced Decorative Elements - sparkles */}
+      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-sparkle"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-sparkle" style={{ animationDelay: '1.5s' }}></div>
+      <div className="absolute top-1/2 right-1/5 w-1.5 h-1.5 bg-white rounded-full animate-sparkle" style={{ animationDelay: '2.5s' }}></div>
+      <div className="absolute top-2/3 left-1/3 w-2.5 h-2.5 bg-white rounded-full animate-sparkle" style={{ animationDelay: '0.8s' }}></div>
+      <div className="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-white rounded-full animate-sparkle" style={{ animationDelay: '3s' }}></div>
+      <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-white rounded-full animate-sparkle" style={{ animationDelay: '1.2s' }}></div>
+      <div className="absolute bottom-1/2 left-1/5 w-1 h-1 bg-white rounded-full animate-sparkle" style={{ animationDelay: '2.2s' }}></div>
+      <div className="absolute top-3/4 right-1/2 w-2 h-2 bg-white rounded-full animate-sparkle" style={{ animationDelay: '0.5s' }}></div>
     </section>
   );
 };
