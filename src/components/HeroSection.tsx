@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import FloatingGiftBox from './FloatingGiftBox';
 
 const HeroSection: React.FC = () => {
   return (
@@ -24,19 +23,8 @@ const HeroSection: React.FC = () => {
             باستخدام الذكاء الاصطناعي، نرشح لك أفضل الهدايا حسب المناسبة والشخص والميزانية.
           </p>
           
-          {/* Button with Gift Boxes positioned around it */}
-          <div className="relative py-6 px-4 inline-block">
-            {/* Floating Gift Boxes - positioned around the button */}
-            <div className="absolute -right-24 -top-16 z-10">
-              <FloatingGiftBox size="lg" delay={0.2} rotation={-5} />
-            </div>
-            <div className="absolute -left-20 -bottom-10 z-10">
-              <FloatingGiftBox size="sm" delay={0.8} rotation={8} />
-            </div>
-            <div className="absolute left-1/2 -bottom-28 transform -translate-x-1/2 z-10">
-              <FloatingGiftBox size="md" delay={1.5} rotation={-3} />
-            </div>
-            
+          {/* Button without gift boxes */}
+          <div className="py-6 px-4 inline-block">
             <Button 
               size="lg" 
               className="bg-tiffany-500 hover:bg-tiffany-600 text-white text-xl px-8 py-6 rounded-xl tiffany-glow animate-glow"
