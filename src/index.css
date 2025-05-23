@@ -91,6 +91,7 @@
   }
 }
 
+/* Base styles for sparkles */
 .sparkle {
   position: absolute;
   background: #81D8D0;
@@ -98,9 +99,69 @@
   pointer-events: none;
 }
 
-.gift-box-3d {
-  transform-style: preserve-3d;
+/* Enhanced 3D styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-x-4 {
+  transform: rotateX(4deg);
+}
+
+.rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
+.rotate-z-15 {
+  transform: rotateZ(15deg);
+}
+
+.-rotate-z-15 {
+  transform: rotateZ(-15deg);
+}
+
+.-rotate-x-40 {
+  transform: rotateX(-40deg);
+}
+
+.rotate-y-40 {
+  transform: rotateY(40deg);
+}
+
+/* Enhanced floating animation */
+.float-animation {
   animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotateZ(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateZ(0deg);
+  }
+  75% {
+    transform: translateY(-4px) rotateZ(-1deg);
+  }
+}
+
+/* Enhanced sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
 }
 
 .tiffany-glow {
