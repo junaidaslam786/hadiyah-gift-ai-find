@@ -5,37 +5,39 @@ import FloatingGiftBox from './FloatingGiftBox';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-tiffany-50 overflow-hidden">
-      {/* Floating Gift Boxes */}
-      <div className="absolute top-20 right-20 z-10">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-tiffany-50 overflow-hidden px-4 py-12">
+      {/* Logo */}
+      <div className="absolute top-8 right-8 z-30">
+        <h2 className="text-3xl md:text-4xl font-bold text-tiffany-600 font-arabic">هدية</h2>
+      </div>
+      
+      {/* Floating Gift Boxes - Redesigned placement */}
+      <div className="absolute top-1/4 right-1/4 z-10">
         <FloatingGiftBox size="lg" delay={0} />
       </div>
-      <div className="absolute top-40 left-16 z-10">
-        <FloatingGiftBox size="md" delay={1} />
+      <div className="absolute bottom-1/4 left-1/6 z-10">
+        <FloatingGiftBox size="sm" delay={1.5} />
       </div>
-      <div className="absolute bottom-32 right-32 z-10">
-        <FloatingGiftBox size="sm" delay={2} />
-      </div>
-      <div className="absolute bottom-20 left-20 z-10">
-        <FloatingGiftBox size="md" delay={0.5} />
+      <div className="absolute top-2/3 right-1/6 z-10">
+        <FloatingGiftBox size="sm" delay={0.8} />
       </div>
       
       {/* Main Content */}
-      <div className="container mx-auto px-4 text-center z-20 relative">
+      <div className="container mx-auto px-8 text-center z-20 relative mt-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-8 leading-tight">
             اكتشف الهدية المثالية
             <br />
             <span className="text-tiffany-500">خلال ثوانٍ</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
             باستخدام الذكاء الاصطناعي، نرشح لك أفضل الهدايا حسب المناسبة والشخص والميزانية.
           </p>
           
           <Button 
             size="lg" 
-            className="bg-tiffany-500 hover:bg-tiffany-600 text-white text-xl px-8 py-4 rounded-xl tiffany-glow animate-glow"
+            className="bg-tiffany-500 hover:bg-tiffany-600 text-white text-xl px-8 py-6 rounded-xl tiffany-glow animate-glow"
             onClick={() => document.getElementById('gift-finder')?.scrollIntoView({ behavior: 'smooth' })}
           >
             ابدأ الآن
@@ -43,10 +45,12 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      {/* Decorative Elements */}
+      {/* Enhanced Decorative Elements */}
       <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-tiffany-400 rounded-full animate-sparkle"></div>
-      <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-tiffany-300 rounded-full animate-sparkle" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-tiffany-500 rounded-full animate-sparkle" style={{ animationDelay: '2.5s' }}></div>
+      <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-tiffany-300 rounded-full animate-sparkle" style={{ animationDelay: '1.5s' }}></div>
+      <div className="absolute top-1/2 right-1/5 w-1.5 h-1.5 bg-tiffany-500 rounded-full animate-sparkle" style={{ animationDelay: '2.5s' }}></div>
+      <div className="absolute top-2/3 left-1/3 w-2.5 h-2.5 bg-tiffany-400 rounded-full animate-sparkle" style={{ animationDelay: '0.8s' }}></div>
+      <div className="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-tiffany-200 rounded-full animate-sparkle" style={{ animationDelay: '3s' }}></div>
     </section>
   );
 };
