@@ -6,6 +6,7 @@ import GiftFinderForm from '../components/GiftFinderForm';
 import GiftSuggestions from '../components/GiftSuggestions';
 import PopularGiftsSection from '../components/PopularGiftsSection';
 import Footer from '../components/Footer';
+import { supabase } from '../integrations/supabase/client'
 
 interface FormData {
   occasion: string;
@@ -118,21 +119,20 @@ const Index = () => {
   //   }, 100);
   // };
 
-    const handleFormSubmit = async (data: FormData) => {
-    // call the Edge Function
-    const res = await fetch(
-      'https://lmvkmlnfklivofxdbpse.supabase.co/functions/v1/dcm-gifts',
-      {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(data),
-      }
-    );
-    if (!res.ok) {
-      console.error(await res.text());
-      return;
-    }
-    const { gifts } = await res.json();
+    const handleFormSubmit = async (formData: FormData) => {
+     // 1) invoke your Supabase Edge Function by its name:
+     const { data, error } = await supabase
+       .functions
+       .invoke<{ gifts: any[] }>('dcm-gifts', {
+         body: JSON.stringify(formData),
+       })
+ 
+     if (error) {
+       console.error('Edge function error:', error)
+       return
+     }
+ 
+     const gifts = data!.gifts
 
     // map Supabase rows → your Gift interface
     setSuggestions(
