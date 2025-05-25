@@ -120,20 +120,27 @@ const Index = () => {
   // };
 
     const handleFormSubmit = async (formData: FormData) => {
-     // 1) invoke your Supabase Edge Function by its name:
-     const res = await fetch(
-  'https://lmvkmlnfklivofxdbpse.supabase.co/functions/v1/dcm-gifts',
-  {
-    method:  'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body:    JSON.stringify(formData),
+     const SUPABASE_URL        = "https://lmvkmlnfklivofxdbpse.supabase.co"
+  const SUPABASE_ANON_KEY   = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtdmttbG5ma2xpdm9meGRicHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY5MDMwNjMsImV4cCI6MjA2MjQ3OTA2M30.8yvA-ee1PQGpoq8UQtM8ekdu10bhok9JUtXNX8Ougd8"  // this one is safe to ship in the browser
+
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/dcm-gifts`, {
+    method:  "POST",
+    headers: {
+      "Content-Type":  "application/json",
+      "apikey":        SUPABASE_ANON_KEY,
+      // you can also send Authorization if you prefer:
+      // "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+    },
+    body: JSON.stringify(formData),
+  })
+
+  if (!res.ok) {
+    const err = await res.text()
+    console.error("Function error:", err)
+    throw new Error(err)
   }
-);
-if (!res.ok) {
-  const body = await res.text();
-  throw new Error(`Function error: ${body}`);
-}
-const { gifts } = await res.json();
+
+  const { gifts } = await res.json()
 
 
     // map Supabase rows → your Gift interface
