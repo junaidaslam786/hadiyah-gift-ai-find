@@ -121,18 +121,20 @@ const Index = () => {
 
     const handleFormSubmit = async (formData: FormData) => {
      // 1) invoke your Supabase Edge Function by its name:
-     const { data, error } = await supabase
-       .functions
-       .invoke<{ gifts: any[] }>('dcm-gifts', {
-         body: JSON.stringify(formData),
-       })
- 
-     if (error) {
-       console.error('Edge function error:', error)
-       return
-     }
- 
-     const gifts = data!.gifts
+     const res = await fetch(
+  'https://lmvkmlnfklivofxdbpse.supabase.co/functions/v1/dcm-gifts',
+  {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify(formData),
+  }
+);
+if (!res.ok) {
+  const body = await res.text();
+  throw new Error(`Function error: ${body}`);
+}
+const { gifts } = await res.json();
+
 
     // map Supabase rows → your Gift interface
     setSuggestions(
