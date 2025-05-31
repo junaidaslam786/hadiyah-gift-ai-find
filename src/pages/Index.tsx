@@ -31,82 +31,82 @@ interface Gift {
 const Index = () => {
   const [suggestions, setSuggestions] = useState<Gift[]>([]);
 
-  const generateSuggestions = (formData: FormData): Gift[] => {
-    // Mock AI suggestions based on form data
-    const mockSuggestions: Gift[] = [
-      {
-        id: 1,
-        name: 'عطر فاخر للرجال من هوغو بوس',
-        description: 'عطر رجالي أنيق برائحة خشبية مع لمسات من الحمضيات المنعشة',
-        price: '٢٨٥ ريال',
-        image: '/placeholder.svg',
-        rating: 5,
-        tags: ['شائع', 'فاخر'],
-        affiliateUrl: 'https://amazon.sa/dp/example1'
-      },
-      {
-        id: 2,
-        name: 'ساعة ذكية آبل واتش',
-        description: 'ساعة ذكية متطورة مع مراقب للصحة وإشعارات ذكية',
-        price: '١٢٨٠ ريال',
-        image: '/placeholder.svg',
-        rating: 5,
-        tags: ['تقنية', 'جديد'],
-        affiliateUrl: 'https://amazon.sa/dp/example2'
-      },
-      {
-        id: 3,
-        name: 'مجموعة عناية بالبشرة',
-        description: 'مجموعة كاملة للعناية بالبشرة من أفضل المكونات الطبيعية',
-        price: '٤٥٠ ريال',
-        image: '/placeholder.svg',
-        rating: 4,
-        tags: ['طبيعي', 'عناية'],
-        affiliateUrl: 'https://noon.com/example3'
-      },
-      {
-        id: 4,
-        name: 'كتاب تنمية بشرية ملهم',
-        description: 'كتاب رائع يساعد على تطوير الذات وتحقيق الأهداف',
-        price: '٨٥ ريال',
-        image: '/placeholder.svg',
-        rating: 5,
-        tags: ['ملهم', 'تعليمي'],
-        affiliateUrl: 'https://jarir.com/example4'
-      },
-      {
-        id: 5,
-        name: 'سماعات بلوتوث لاسلكية',
-        description: 'سماعات عالية الجودة مع إلغاء الضوضاء وبطارية طويلة المدى',
-        price: '٣٦٠ ريال',
-        image: '/placeholder.svg',
-        rating: 4,
-        tags: ['تقنية', 'صوت'],
-        affiliateUrl: 'https://amazon.sa/dp/example5'
-      },
-      {
-        id: 6,
-        name: 'شموع عطرية فاخرة',
-        description: 'مجموعة شموع عطرية بروائح مميزة تضفي أجواء رومانسية',
-        price: '١٢٥ ريال',
-        image: '/placeholder.svg',
-        rating: 5,
-        tags: ['رومانسي', 'عطر'],
-        affiliateUrl: 'https://noon.com/example6'
-      }
-    ];
+  // const generateSuggestions = (formData: FormData): Gift[] => {
+  //   // Mock AI suggestions based on form data
+  //   const mockSuggestions: Gift[] = [
+  //     {
+  //       id: 1,
+  //       name: 'عطر فاخر للرجال من هوغو بوس',
+  //       description: 'عطر رجالي أنيق برائحة خشبية مع لمسات من الحمضيات المنعشة',
+  //       price: '٢٨٥ ريال',
+  //       image: '/placeholder.svg',
+  //       rating: 5,
+  //       tags: ['شائع', 'فاخر'],
+  //       affiliateUrl: 'https://amazon.sa/dp/example1'
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'ساعة ذكية آبل واتش',
+  //       description: 'ساعة ذكية متطورة مع مراقب للصحة وإشعارات ذكية',
+  //       price: '١٢٨٠ ريال',
+  //       image: '/placeholder.svg',
+  //       rating: 5,
+  //       tags: ['تقنية', 'جديد'],
+  //       affiliateUrl: 'https://amazon.sa/dp/example2'
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'مجموعة عناية بالبشرة',
+  //       description: 'مجموعة كاملة للعناية بالبشرة من أفضل المكونات الطبيعية',
+  //       price: '٤٥٠ ريال',
+  //       image: '/placeholder.svg',
+  //       rating: 4,
+  //       tags: ['طبيعي', 'عناية'],
+  //       affiliateUrl: 'https://noon.com/example3'
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'كتاب تنمية بشرية ملهم',
+  //       description: 'كتاب رائع يساعد على تطوير الذات وتحقيق الأهداف',
+  //       price: '٨٥ ريال',
+  //       image: '/placeholder.svg',
+  //       rating: 5,
+  //       tags: ['ملهم', 'تعليمي'],
+  //       affiliateUrl: 'https://jarir.com/example4'
+  //     },
+  //     {
+  //       id: 5,
+  //       name: 'سماعات بلوتوث لاسلكية',
+  //       description: 'سماعات عالية الجودة مع إلغاء الضوضاء وبطارية طويلة المدى',
+  //       price: '٣٦٠ ريال',
+  //       image: '/placeholder.svg',
+  //       rating: 4,
+  //       tags: ['تقنية', 'صوت'],
+  //       affiliateUrl: 'https://amazon.sa/dp/example5'
+  //     },
+  //     {
+  //       id: 6,
+  //       name: 'شموع عطرية فاخرة',
+  //       description: 'مجموعة شموع عطرية بروائح مميزة تضفي أجواء رومانسية',
+  //       price: '١٢٥ ريال',
+  //       image: '/placeholder.svg',
+  //       rating: 5,
+  //       tags: ['رومانسي', 'عطر'],
+  //       affiliateUrl: 'https://noon.com/example6'
+  //     }
+  //   ];
 
-    // Filter suggestions based on budget
-    const budgetRanges = {
-      'low': [1, 4, 6], // Under 100 SAR - only items 4 and 6 qualify, adding 1 for variety
-      'medium': [3, 4, 5, 6], // 100-300 SAR
-      'high': [1, 3, 5], // 300-700 SAR
-      'premium': [1, 2] // Over 700 SAR
-    };
+  //   // Filter suggestions based on budget
+  //   const budgetRanges = {
+  //     'low': [1, 4, 6], // Under 100 SAR - only items 4 and 6 qualify, adding 1 for variety
+  //     'medium': [3, 4, 5, 6], // 100-300 SAR
+  //     'high': [1, 3, 5], // 300-700 SAR
+  //     'premium': [1, 2] // Over 700 SAR
+  //   };
 
-    const relevantIds = budgetRanges[formData.budget as keyof typeof budgetRanges] || [1, 2, 3];
-    return mockSuggestions.filter(gift => relevantIds.includes(gift.id));
-  };
+  //   const relevantIds = budgetRanges[formData.budget as keyof typeof budgetRanges] || [1, 2, 3];
+  //   return mockSuggestions.filter(gift => relevantIds.includes(gift.id));
+  // };
 
   const SUPABASE_URL = "https://lmvkmlnfklivofxdbpse.supabase.co"
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtdmttbG5ma2xpdm9meGRicHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY5MDMwNjMsImV4cCI6MjA2MjQ3OTA2M30.8yvA-ee1PQGpoq8UQtM8ekdu10bhok9JUtXNX8Ougd8"
