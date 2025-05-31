@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -67,13 +66,13 @@ const GiftFinderForm: React.FC<GiftFinderFormProps> = ({ onSubmit }) => {
                     <SelectValue placeholder="اختر المناسبة" />
                   </SelectTrigger>
                   <SelectContent className="bg-white z-50">
-                    <SelectItem value="birthday">عيد ميلاد</SelectItem>
-                    <SelectItem value="graduation">تخرج</SelectItem>
-                    <SelectItem value="wedding">زواج</SelectItem>
-                    <SelectItem value="anniversary">ذكرى سنوية</SelectItem>
-                    <SelectItem value="holiday">عطلة/عيد</SelectItem>
-                    <SelectItem value="achievement">إنجاز</SelectItem>
-                    <SelectItem value="other">مناسبة أخرى</SelectItem>
+                    <SelectItem value="عيد ميلاد">عيد ميلاد</SelectItem>
+                    <SelectItem value="تخرج">تخرج</SelectItem>
+                    <SelectItem value="زواج">زواج</SelectItem>
+                    <SelectItem value="ذكرى سنوية">ذكرى سنوية</SelectItem>
+                    <SelectItem value="عطلة/عيد">عطلة/عيد</SelectItem>
+                    <SelectItem value="إنجاز">إنجاز</SelectItem>
+                    <SelectItem value="مناسبة أخرى">مناسبة أخرى</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -88,11 +87,11 @@ const GiftFinderForm: React.FC<GiftFinderFormProps> = ({ onSubmit }) => {
                     <SelectValue placeholder="اختر الفئة العمرية" />
                   </SelectTrigger>
                   <SelectContent className="bg-white z-50">
-                    <SelectItem value="child">طفل (0-12)</SelectItem>
-                    <SelectItem value="teen">مراهق (13-17)</SelectItem>
-                    <SelectItem value="young-adult">شاب (18-30)</SelectItem>
-                    <SelectItem value="adult">بالغ (31-50)</SelectItem>
-                    <SelectItem value="senior">كبير السن (50+)</SelectItem>
+                    <SelectItem value="طفل (0-12)">طفل (0-12)</SelectItem>
+                    <SelectItem value="مراهق (13-17)">مراهق (13-17)</SelectItem>
+                    <SelectItem value="شاب (18-30)">شاب (18-30)</SelectItem>
+                    <SelectItem value="بالغ (31-50)">بالغ (31-50)</SelectItem>
+                    <SelectItem value="كبير السن (+50)">كبير السن (+50)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -107,8 +106,8 @@ const GiftFinderForm: React.FC<GiftFinderFormProps> = ({ onSubmit }) => {
                     <SelectValue placeholder="اختر الجنس" />
                   </SelectTrigger>
                   <SelectContent className="bg-white z-50">
-                    <SelectItem value="male">ذكر</SelectItem>
-                    <SelectItem value="female">أنثى</SelectItem>
+                    <SelectItem value="ذكر">ذكر</SelectItem>
+                    <SelectItem value="أنثى">أنثى</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -123,13 +122,13 @@ const GiftFinderForm: React.FC<GiftFinderFormProps> = ({ onSubmit }) => {
                     <SelectValue placeholder="اختر العلاقة" />
                   </SelectTrigger>
                   <SelectContent className="bg-white z-50">
-                    <SelectItem value="spouse">زوج/زوجة</SelectItem>
-                    <SelectItem value="parent">والد/والدة</SelectItem>
-                    <SelectItem value="sibling">أخ/أخت</SelectItem>
-                    <SelectItem value="friend">صديق/صديقة</SelectItem>
-                    <SelectItem value="colleague">زميل عمل</SelectItem>
-                    <SelectItem value="relative">قريب</SelectItem>
-                    <SelectItem value="other">آخر</SelectItem>
+                    <SelectItem value="زوج/زوجة">زوج/زوجة</SelectItem>
+                    <SelectItem value="والد/والدة">والد/والدة</SelectItem>
+                    <SelectItem value="أخ/أخت">أخ/أخت</SelectItem>
+                    <SelectItem value="صديق/صديقة">صديق/صديقة</SelectItem>
+                    <SelectItem value="زميل عمل">زميل عمل</SelectItem>
+                    <SelectItem value="قريب">قريب</SelectItem>
+                    <SelectItem value="آخر">آخر</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -144,15 +143,15 @@ const GiftFinderForm: React.FC<GiftFinderFormProps> = ({ onSubmit }) => {
                     <SelectValue placeholder="اختر الاهتمامات" />
                   </SelectTrigger>
                   <SelectContent className="bg-white z-50">
-                    <SelectItem value="fashion">الموضة والأزياء</SelectItem>
-                    <SelectItem value="technology">التقنية</SelectItem>
-                    <SelectItem value="cooking">الطبخ</SelectItem>
-                    <SelectItem value="sports">الرياضة</SelectItem>
-                    <SelectItem value="reading">القراءة</SelectItem>
-                    <SelectItem value="travel">السفر</SelectItem>
-                    <SelectItem value="art">الفن والإبداع</SelectItem>
-                    <SelectItem value="music">الموسيقى</SelectItem>
-                    <SelectItem value="beauty">الجمال والعناية</SelectItem>
+                    <SelectItem value="الموضة والأزياء">الموضة والأزياء</SelectItem>
+                    <SelectItem value="التقنية">التقنية</SelectItem>
+                    <SelectItem value="الطبخ">الطبخ</SelectItem>
+                    <SelectItem value="الرياضة">الرياضة</SelectItem>
+                    <SelectItem value="القراءة">القراءة</SelectItem>
+                    <SelectItem value="السفر">السفر</SelectItem>
+                    <SelectItem value="الفن والإبداع">الفن والإبداع</SelectItem>
+                    <SelectItem value="الموسيقى">الموسيقى</SelectItem>
+                    <SelectItem value="الجمال والعناية">الجمال والعناية</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -167,10 +166,10 @@ const GiftFinderForm: React.FC<GiftFinderFormProps> = ({ onSubmit }) => {
                     <SelectValue placeholder="اختر الميزانية" />
                   </SelectTrigger>
                   <SelectContent className="bg-white z-50">
-                    <SelectItem value="low">أقل من 100 ريال</SelectItem>
-                    <SelectItem value="medium">من 100 إلى 300 ريال</SelectItem>
-                    <SelectItem value="high">من 300 إلى 700 ريال</SelectItem>
-                    <SelectItem value="premium">أكثر من 700 ريال</SelectItem>
+                    <SelectItem value="أقل من 100 ريال">أقل من 100 ريال</SelectItem>
+                    <SelectItem value="من 100 إلى 300 ريال">من 100 إلى 300 ريال</SelectItem>
+                    <SelectItem value="من 300 إلى 700 ريال">من 300 إلى 700 ريال</SelectItem>
+                    <SelectItem value="أكثر من 700 ريال">أكثر من 700 ريال</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
