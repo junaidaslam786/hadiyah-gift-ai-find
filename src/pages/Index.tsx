@@ -31,8 +31,8 @@ interface Gift {
 const Index = () => {
   const [suggestions, setSuggestions] = useState<Gift[]>([]);
 
-  // const generateSuggestions = (formData: FormData): Gift[] => {
-  //   // Mock AI suggestions based on form data
+  const generateSuggestions = (formData: FormData): Gift[] => {
+    // Mock AI suggestions based on form data
   //   const mockSuggestions: Gift[] = [
   //     {
   //       id: 1,
