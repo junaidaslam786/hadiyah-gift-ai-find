@@ -32,7 +32,7 @@ const Index = () => {
   const [suggestions, setSuggestions] = useState<Gift[]>([]);
 
   const generateSuggestions = (formData: FormData): Gift[] => {
-    Mock AI suggestions based on form data
+    // Mock AI suggestions based on form data
     const mockSuggestions: Gift[] = [
       {
         id: 1,
@@ -108,59 +108,59 @@ const Index = () => {
     return mockSuggestions.filter(gift => relevantIds.includes(gift.id));
   };
 
-  const handleFormSubmit = (formData: FormData) => {
-    console.log('Form submitted:', formData);
-    const newSuggestions = generateSuggestions(formData);
-    setSuggestions(newSuggestions);
-    
-    // Scroll to suggestions
-    setTimeout(() => {
-      document.getElementById('gift-suggestions')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
+  const SUPABASE_URL = "https://lmvkmlnfklivofxdbpse.supabase.co"
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtdmttbG5ma2xpdm9meGRicHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY5MDMwNjMsImV4cCI6MjA2MjQ3OTA2M30.8yvA-ee1PQGpoq8UQtM8ekdu10bhok9JUtXNX8Ougd8"
 
-    const SUPABASE_URL      = "https://lmvkmlnfklivofxdbpse.supabase.co"
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtdmttbG5ma2xpdm9meGRicHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY5MDMwNjMsImV4cCI6MjA2MjQ3OTA2M30.8yvA-ee1PQGpoq8UQtM8ekdu10bhok9JUtXNX8Ougd8"  // your SUPABASE_ANON_KEY
-
-    async function handleFormSubmit(formData: FormData) {
+  const handleFormSubmit = async (formData: FormData) => {
+    try {
       const res = await fetch(`${SUPABASE_URL}/functions/v1/dcm-gifts`, {
         method: "POST",
         headers: {
-          "Content-Type":  "application/json",
-          "apikey":        SUPABASE_ANON_KEY,
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON_KEY,
           "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
         },
         body: JSON.stringify(formData),
       })
-    
+
       if (!res.ok) {
         const text = await res.text()
         console.error("Function error:", text)
         throw new Error(text)
       }
 
-    const { gifts } = await res.json()
+      const { gifts } = await res.json()
 
+      // map Supabase rows → your Gift interface
+      setSuggestions(
+        gifts.map((g: any, i: number) => ({
+          id: i,
+          name: g.name,
+          description: g.description,
+          price: g.price,
+          image: g.image_url,
+          rating: 0,
+          tags: [],
+          affiliateUrl: g.affiliate_url,
+        }))
+      );
 
-    // map Supabase rows → your Gift interface
-    setSuggestions(
-      gifts.map((g: any, i: number) => ({
-        id:           i,
-        name:         g.name,
-        description:  g.description,
-        price:        g.price,
-        image:        g.image_url,
-        rating:       0,
-        tags:         [],
-        affiliateUrl: g.affiliate_url,
-      }))
-    );
-
-    // scroll
-    setTimeout(() => {
-      document.getElementById('gift-suggestions')
-              ?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+      // scroll
+      setTimeout(() => {
+        document.getElementById('gift-suggestions')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } catch (error) {
+      console.error('Error calling Supabase function:', error);
+      // Fallback to mock suggestions if API fails
+      console.log('Falling back to mock suggestions');
+      const newSuggestions = generateSuggestions(formData);
+      setSuggestions(newSuggestions);
+      
+      setTimeout(() => {
+        document.getElementById('gift-suggestions')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   return (

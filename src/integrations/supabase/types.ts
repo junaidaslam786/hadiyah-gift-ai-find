@@ -33,6 +33,57 @@ export type Database = {
         }
         Relationships: []
       }
+      gifts: {
+        Row: {
+          affiliate_url: string
+          age_group: string | null
+          budget: string | null
+          created_at: string | null
+          description: string | null
+          gender: string | null
+          id: number
+          image_url: string | null
+          interests: string | null
+          name: string
+          occasion: string | null
+          offer_name: string | null
+          price: string | null
+          relationship: string | null
+        }
+        Insert: {
+          affiliate_url: string
+          age_group?: string | null
+          budget?: string | null
+          created_at?: string | null
+          description?: string | null
+          gender?: string | null
+          id?: number
+          image_url?: string | null
+          interests?: string | null
+          name: string
+          occasion?: string | null
+          offer_name?: string | null
+          price?: string | null
+          relationship?: string | null
+        }
+        Update: {
+          affiliate_url?: string
+          age_group?: string | null
+          budget?: string | null
+          created_at?: string | null
+          description?: string | null
+          gender?: string | null
+          id?: number
+          image_url?: string | null
+          interests?: string | null
+          name?: string
+          occasion?: string | null
+          offer_name?: string | null
+          price?: string | null
+          relationship?: string | null
+        }
+        Relationships: []
+      }
       product_images: {
         Row: {
           created_at: string
