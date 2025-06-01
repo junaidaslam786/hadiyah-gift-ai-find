@@ -17,37 +17,6 @@ export type OfferGifts = {
 
 export const recommendedGiftSections: OfferGifts[] = [
   {
-    offer: 'Armani Beauty',
-    offerLogo: '/images/gifts/armani-beauty-logo.png',
-    offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com',
-    gifts: [
-      {
-        id: 'a1',
-        name: 'Si Passione Eau de Parfum Gift Set',
-        description: 'A passionate and floral women\'s fragrance set.',
-        price: '399 درهم',
-        image: '/images/gifts/armani-perfume-set.png',
-        url: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com',
-      },
-      {
-        id: 'a2',
-        name: 'Armani Code Parfum',
-        description: 'Sophisticated masculine fragrance with iris and tonka bean.',
-        price: '450 درهم',
-        image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59d32?w=400',
-        url: 'https://www.armanibeauty.ae/',
-      },
-      {
-        id: 'a3',
-        name: 'My Way Parfum',
-        description: 'Floral fragrance celebrating encounters and connections.',
-        price: '380 درهم',
-        image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400',
-        url: 'https://www.armanibeauty.ae/',
-      },
-    ],
-  },
-  {
     offer: 'al giftcards',
     offerLogo: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=100&fit=crop',
     offerUrl: 'https://www.algiftcards.com/',
