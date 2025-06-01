@@ -33,54 +33,90 @@ export type Database = {
         }
         Relationships: []
       }
+      gift_offers: {
+        Row: {
+          gift_id: number | null
+          id: number
+          offer_id: number | null
+        }
+        Insert: {
+          gift_id?: number | null
+          id?: number
+          offer_id?: number | null
+        }
+        Update: {
+          gift_id?: number | null
+          id?: number
+          offer_id?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "gift_offers_gift_id_fkey"
+            columns: ["gift_id"]
+            isOneToOne: false
+            referencedRelation: "gifts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "gift_offers_offer_id_fkey"
+            columns: ["offer_id"]
+            isOneToOne: false
+            referencedRelation: "offers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       gifts: {
         Row: {
-          affiliate_url: string
-          age_group: string | null
-          budget: string | null
-          created_at: string | null
+          age_group: string
           description: string | null
-          gender: string | null
           id: number
           image_url: string | null
-          interests: string | null
+          interests: string
           name: string
-          occasion: string | null
-          offer_name: string | null
-          price: string | null
-          relationship: string | null
+          occasion: string
+          price: number | null
+        }
+        Insert: {
+          age_group: string
+          description?: string | null
+          id?: number
+          image_url?: string | null
+          interests: string
+          name: string
+          occasion: string
+          price?: number | null
+        }
+        Update: {
+          age_group?: string
+          description?: string | null
+          id?: number
+          image_url?: string | null
+          interests?: string
+          name?: string
+          occasion?: string
+          price?: number | null
+        }
+        Relationships: []
+      }
+      offers: {
+        Row: {
+          affiliate_url: string
+          id: number
+          image_url: string | null
+          name: string
         }
         Insert: {
           affiliate_url: string
-          age_group?: string | null
-          budget?: string | null
-          created_at?: string | null
-          description?: string | null
-          gender?: string | null
           id?: number
           image_url?: string | null
-          interests?: string | null
           name: string
-          occasion?: string | null
-          offer_name?: string | null
-          price?: string | null
-          relationship?: string | null
         }
         Update: {
           affiliate_url?: string
-          age_group?: string | null
-          budget?: string | null
-          created_at?: string | null
-          description?: string | null
-          gender?: string | null
           id?: number
           image_url?: string | null
-          interests?: string | null
           name?: string
-          occasion?: string | null
-          offer_name?: string | null
-          price?: string | null
-          relationship?: string | null
         }
         Relationships: []
       }
