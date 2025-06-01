@@ -64,6 +64,29 @@ const RecommendedGiftSections: React.FC = () => {
                   </div>
                 )}
 
+                {/* Al Giftcards Banner in Header */}
+                {section.offer === 'al giftcards' && (
+                  <div className="flex justify-center">
+                    <a 
+                      href="https://go.urtrackinglink.com/aff_c?offer_id=1775&aff_id=150702&file_id=106801"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img 
+                        src="https://media.go2speed.org/brand/files/dcm/1775/algiftcards.png" 
+                        alt="Al Giftcards Banner"
+                        className="max-w-full h-auto rounded-lg shadow-lg"
+                        style={{ maxWidth: '800px', height: 'auto' }}
+                      />
+                    </a>
+                    <img 
+                      src="https://go.urtrackinglink.com/aff_i?offer_id=1775&file_id=106801&aff_id=150702" 
+                      style={{ position: 'absolute', visibility: 'hidden', width: 0, height: 0 }} 
+                      alt=""
+                    />
+                  </div>
+                )}
+
                 {/* Dyson Banner in Header */}
                 {section.offer === 'Dyson' && (
                   <div className="flex justify-center">
