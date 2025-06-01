@@ -22,46 +22,48 @@ const RecommendedGiftSections: React.FC = () => {
           {recommendedGiftSections.map((section, sectionIndex) => (
             <div key={sectionIndex} className="space-y-8">
               {/* Section Header */}
-              <div className="flex flex-col md:flex-row items-center justify-between bg-white rounded-lg p-6 shadow-lg border border-gray-100">
-                <div className="flex items-center gap-4 mb-4 md:mb-0">
-                  <img 
-                    src={section.offerLogo} 
-                    alt={section.offer}
-                    className="h-12 w-auto object-contain"
-                  />
-                  <h3 className="text-2xl font-bold text-gray-800">{section.offer}</h3>
-                </div>
-                <Button
-                  className="bg-tiffany-500 hover:bg-tiffany-600 text-white flex items-center gap-2"
-                  onClick={() => window.open(section.offerUrl, '_blank')}
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  زيارة المتجر
-                </Button>
-              </div>
-
-              {/* Armani Beauty Banner */}
-              {section.offer === 'Armani Beauty' && (
-                <div className="flex justify-center mb-8">
-                  <a 
-                    href="https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com&file_id=106527"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+              <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-100">
+                <div className="flex flex-col md:flex-row items-center justify-between mb-4">
+                  <div className="flex items-center gap-4 mb-4 md:mb-0">
                     <img 
-                      src="https://media.go2speed.org/brand/files/dcm/1569/ArmaniBeauty.png" 
-                      alt="Armani Beauty Banner"
-                      className="max-w-full h-auto rounded-lg shadow-lg"
-                      style={{ maxWidth: '800px', height: 'auto' }}
+                      src={section.offerLogo} 
+                      alt={section.offer}
+                      className="h-12 w-auto object-contain"
                     />
-                  </a>
-                  <img 
-                    src="https://go.urtrackinglink.com/aff_i?offer_id=1569&file_id=106527&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com" 
-                    style={{ position: 'absolute', visibility: 'hidden', width: 0, height: 0 }} 
-                    alt=""
-                  />
+                    <h3 className="text-2xl font-bold text-gray-800">{section.offer}</h3>
+                  </div>
+                  <Button
+                    className="bg-tiffany-500 hover:bg-tiffany-600 text-white flex items-center gap-2"
+                    onClick={() => window.open(section.offerUrl, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    زيارة المتجر
+                  </Button>
                 </div>
-              )}
+
+                {/* Armani Beauty Banner in Header */}
+                {section.offer === 'Armani Beauty' && (
+                  <div className="flex justify-center">
+                    <a 
+                      href="https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com&file_id=106527"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img 
+                        src="https://media.go2speed.org/brand/files/dcm/1569/ArmaniBeauty.png" 
+                        alt="Armani Beauty Banner"
+                        className="max-w-full h-auto rounded-lg shadow-lg"
+                        style={{ maxWidth: '800px', height: 'auto' }}
+                      />
+                    </a>
+                    <img 
+                      src="https://go.urtrackinglink.com/aff_i?offer_id=1569&file_id=106527&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com" 
+                      style={{ position: 'absolute', visibility: 'hidden', width: 0, height: 0 }} 
+                      alt=""
+                    />
+                  </div>
+                )}
+              </div>
 
               {/* Gifts Grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
