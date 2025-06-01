@@ -63,6 +63,29 @@ const RecommendedGiftSections: React.FC = () => {
                     />
                   </div>
                 )}
+
+                {/* Dyson Banner in Header */}
+                {section.offer === 'Dyson' && (
+                  <div className="flex justify-center">
+                    <a 
+                      href="https://go.urtrackinglink.com/aff_c?offer_id=1549&aff_id=150702&file_id=106787"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img 
+                        src="https://media.go2speed.org/brand/files/dcm/1549/20241130143707-Dyson.png" 
+                        alt="Dyson Banner"
+                        className="max-w-full h-auto rounded-lg shadow-lg"
+                        style={{ maxWidth: '800px', height: 'auto' }}
+                      />
+                    </a>
+                    <img 
+                      src="https://go.urtrackinglink.com/aff_i?offer_id=1549&file_id=106787&aff_id=150702" 
+                      style={{ position: 'absolute', visibility: 'hidden', width: 0, height: 0 }} 
+                      alt=""
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Gifts Grid */}
