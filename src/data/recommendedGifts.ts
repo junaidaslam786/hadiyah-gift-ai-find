@@ -1,4 +1,3 @@
-
 export type GiftProduct = {
   id: string;
   name: string;
@@ -26,7 +25,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         name: 'مجموعة عطر سي باسيوني',
         description: 'عطر نسائي زهري وعاطفي في مجموعة هدايا فاخرة.',
         price: '399 درهم',
-        image: '/images/gifts/armani-perfume-set.png',
+        image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&h=400&fit=crop&crop=center',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com',
       },
       {
@@ -119,7 +118,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         name: 'مجفف شعر دايسون سوبرسونيك™',
         description: 'تجفيف سريع بدون حرارة مفرطة. لجميع أنواع الشعر.',
         price: '1,599 درهم',
-        image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400',
+        image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop&crop=center',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1549&aff_id=150702&source=https://www.dyson.ae/en-AE/products/hair-care/dyson-supersonic-hair-dryer',
       },
       {
