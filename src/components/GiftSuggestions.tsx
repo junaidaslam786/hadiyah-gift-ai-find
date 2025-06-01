@@ -78,9 +78,10 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
                     <span className="text-sm text-gray-600">({gift.rating}/5)</span>
                   </div>
                   
-                  <span className="text-2xl font-bold text-tiffany-600">
-                    {gift.price} <span className="text-base font-normal text-gray-400">ريال</span>
-                  </span>
+                 <span className="text-2xl font-bold text-tiffany-600 flex items-baseline">
+  {gift.price}
+  <span className="ml-1 text-sm font-semibold text-tiffany-300">ريال</span>
+</span>
                 </div>
                 
                 {/* Offers Section */}
