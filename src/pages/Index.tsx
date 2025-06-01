@@ -17,15 +17,21 @@ interface FormData {
   budget: string;
 }
 
+interface Offer {
+  name: string;
+  affiliate_url: string;
+  image_url?: string | null;
+}
+
 interface Gift {
   id: number;
   name: string;
   description: string;
-  price: string;
+  price: string | number;
   image: string;
   rating: number;
   tags: string[];
-  affiliateUrl: string;
+  offers: Offer[];
 }
 
 const Index = () => {
@@ -42,7 +48,7 @@ const Index = () => {
         image: '/placeholder.svg',
         rating: 5,
         tags: ['شائع', 'فاخر'],
-        affiliateUrl: 'https://amazon.sa/dp/example1'
+        offers: []
       },
       {
         id: 2,
@@ -52,7 +58,7 @@ const Index = () => {
         image: '/placeholder.svg',
         rating: 5,
         tags: ['تقنية', 'جديد'],
-        affiliateUrl: 'https://amazon.sa/dp/example2'
+        offers: []
       },
       {
         id: 3,
@@ -62,7 +68,7 @@ const Index = () => {
         image: '/placeholder.svg',
         rating: 4,
         tags: ['طبيعي', 'عناية'],
-        affiliateUrl: 'https://noon.com/example3'
+        offers: []
       },
       {
         id: 4,
@@ -72,7 +78,7 @@ const Index = () => {
         image: '/placeholder.svg',
         rating: 5,
         tags: ['ملهم', 'تعليمي'],
-        affiliateUrl: 'https://jarir.com/example4'
+        offers: []
       },
       {
         id: 5,
@@ -82,7 +88,7 @@ const Index = () => {
         image: '/placeholder.svg',
         rating: 4,
         tags: ['تقنية', 'صوت'],
-        affiliateUrl: 'https://amazon.sa/dp/example5'
+        offers: []
       },
       {
         id: 6,
@@ -92,7 +98,7 @@ const Index = () => {
         image: '/placeholder.svg',
         rating: 5,
         tags: ['رومانسي', 'عطر'],
-        affiliateUrl: 'https://noon.com/example6'
+        offers: []
       }
     ];
 
