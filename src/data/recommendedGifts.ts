@@ -18,7 +18,7 @@ export type OfferGifts = {
 export const recommendedGiftSections: OfferGifts[] = [
   {
     offer: 'Armani Beauty',
-    offerLogo: '/images/armani-beauty-logo.png',
+    offerLogo: 'public/images/armani-beauty-logo.png',
     offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com',
     gifts: [
       {
