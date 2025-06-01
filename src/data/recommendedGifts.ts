@@ -1,3 +1,4 @@
+
 export type GiftProduct = {
   id: string;
   name: string;
@@ -17,7 +18,7 @@ export type OfferGifts = {
 export const recommendedGiftSections: OfferGifts[] = [
   {
     offer: 'Armani Beauty',
-    offerLogo: '/images/gifts/armani-beauty-logo.png',
+    offerLogo: 'https://media.go2speed.org/brand/files/dcm/1569/ArmaniBeauty.png',
     offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com',
     gifts: [
       {
@@ -33,7 +34,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         name: 'Armani Code Parfum',
         description: 'Sophisticated masculine fragrance with iris and tonka bean.',
         price: '450 درهم',
-        image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59d32?w=400',
+        image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=400&fit=crop&crop=center',
         url: 'https://www.armanibeauty.ae/',
       },
       {
@@ -41,7 +42,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         name: 'My Way Parfum',
         description: 'Floral fragrance celebrating encounters and connections.',
         price: '380 درهم',
-        image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400',
+        image: 'https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400&h=400&fit=crop&crop=center',
         url: 'https://www.armanibeauty.ae/',
       },
     ],
