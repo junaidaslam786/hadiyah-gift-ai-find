@@ -141,7 +141,8 @@ const Index = () => {
           image: g.image_url,
           rating: 0,
           tags: [],
-          affiliateUrl: g.affiliate_url,
+          // affiliateUrl: g.affiliate_url,
+          offers: g.offers || [],
         }))
       );
 
