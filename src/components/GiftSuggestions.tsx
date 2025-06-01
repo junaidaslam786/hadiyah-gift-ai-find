@@ -1,20 +1,23 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Star, Tag } from 'lucide-react';
+import { Star, Tag, ShoppingBag } from 'lucide-react';
 
+interface Offer {
+  name: string;
+  affiliate_url: string;
+  image_url?: string | null;
+}
 interface Gift {
   id: number;
   name: string;
   description: string;
-  price: string;
+  price: string | number;
   image: string;
   rating: number;
   tags: string[];
-  affiliateUrl: string;
+  offers: Offer[];
 }
-
 interface GiftSuggestionsProps {
   gifts: Gift[];
 }
@@ -39,7 +42,7 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
             <Card key={gift.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white border border-gray-100 hover:border-tiffany-200">
               <div className="relative">
                 <img 
-                  src={gift.image} 
+                  src={gift.image}
                   alt={gift.name}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -76,16 +79,27 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
                   </div>
                   
                   <span className="text-2xl font-bold text-tiffany-600">
-                    {gift.price}
+                    {gift.price} <span className="text-base font-normal text-gray-400">ريال</span>
                   </span>
                 </div>
                 
-                <Button 
-                  className="w-full bg-tiffany-500 hover:bg-tiffany-600 text-white rounded-lg tiffany-glow"
-                  onClick={() => window.open(gift.affiliateUrl, '_blank')}
-                >
-                  اشترِ الآن
-                </Button>
+                {/* Offers Section */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {gift.offers && gift.offers.length > 0 ? (
+                    gift.offers.map((offer, idx) => (
+                      <Button
+                        key={idx}
+                        className="bg-tiffany-500 hover:bg-tiffany-600 text-white rounded-lg flex items-center gap-2 px-4 py-2 text-sm"
+                        onClick={() => window.open(offer.affiliate_url, '_blank')}
+                      >
+                        <ShoppingBag className="w-4 h-4" />
+                        {offer.name}
+                      </Button>
+                    ))
+                  ) : (
+                    <span className="text-gray-400 text-sm">لا توجد متاجر متاحة حالياً</span>
+                  )}
+                </div>
               </div>
             </Card>
           ))}
