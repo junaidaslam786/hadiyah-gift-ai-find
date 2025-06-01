@@ -5,6 +5,7 @@ import HowItWorksSection from '../components/HowItWorksSection';
 import GiftFinderForm from '../components/GiftFinderForm';
 import GiftSuggestions from '../components/GiftSuggestions';
 import PopularGiftsSection from '../components/PopularGiftsSection';
+import RecommendedGiftSection from '../components/RecommendedGiftSection';
 import Footer from '../components/Footer';
 import { supabase } from '../integrations/supabase/client'
 
@@ -174,6 +175,7 @@ const Index = () => {
     <div className="min-h-screen bg-white font-arabic">
       <HeroSection />
       <HowItWorksSection />
+      <RecommendGiftSecion />
       <GiftFinderForm onSubmit={handleFormSubmit} />
       <div id="gift-suggestions">
         <GiftSuggestions gifts={suggestions} />
