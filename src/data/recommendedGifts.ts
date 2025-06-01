@@ -1,4 +1,3 @@
-
 export type GiftProduct = {
   id: string;
   name: string;
@@ -111,7 +110,7 @@ export const recommendedGiftSections: OfferGifts[] = [
   },
   {
     offer: 'Dyson',
-    offerLogo: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=200&h=100&fit=crop',
+    offerLogo: 'https://media.go2speed.org/brand/files/dcm/1549/20241130143707-Dyson.png',
     offerUrl: 'https://www.dyson.ae/en-AE',
     gifts: [
       {
