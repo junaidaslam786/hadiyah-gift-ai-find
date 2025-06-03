@@ -51,13 +51,6 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "gift_offers_gift_id_fkey"
-            columns: ["gift_id"]
-            isOneToOne: false
-            referencedRelation: "gifts"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "gift_offers_offer_id_fkey"
             columns: ["offer_id"]
             isOneToOne: false
