@@ -8,7 +8,6 @@ import RecommendedGiftSections from '../components/RecommendedGiftSections';
 import Footer from '../components/Footer';
 import { supabase } from '../integrations/supabase/client'
 
-import { recommendedGiftProducts } from '../data/recommendedGifts';
 
 interface FormData {
   occasion: string;
@@ -37,7 +36,7 @@ interface Gift {
 }
 
 const Index = () => {
-  const [suggestions, setSuggestions] = useState<Gift[]>(recommendedGiftProducts);
+  const [suggestions, setSuggestions] = useState<Gift[]>([]);
 
   const generateSuggestions = (formData: FormData): Gift[] => {
     // Mock AI suggestions based on form data
