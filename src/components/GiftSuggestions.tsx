@@ -9,10 +9,10 @@ interface Offer {
   image_url?: string | null;
 }
 interface Gift {
-  id: string;
+  id: number;
   name: string;
   description: string;
-  price: string;
+  price: string | number;
   image: string;
   rating: number;
   tags: string[];
@@ -23,7 +23,7 @@ interface GiftSuggestionsProps {
 }
 
 const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
-  if (!gifts || gifts.length === 0) return null;
+  if (gifts.length === 0) return null;
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-tiffany-50">
@@ -36,6 +36,7 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
             وجدنا هذه الهدايا المثالية بناءً على اختياراتك
           </p>
         </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {gifts.map((gift) => (
             <Card key={gift.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white border border-gray-100 hover:border-tiffany-200">
@@ -46,7 +47,7 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4 flex gap-2">
-                  {(gift.tags || []).map((tag, index) => (
+                  {gift.tags.map((tag, index) => (
                     <span key={index} className="bg-tiffany-500 text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
                       <Tag className="w-3 h-3" />
                       {tag}
@@ -54,27 +55,36 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
                   ))}
                 </div>
               </div>
+              
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-tiffany-600 transition-colors">
                   {gift.name}
                 </h3>
+                
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   {gift.description}
                 </p>
+                
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`w-4 h-4 ${i < (gift.rating || 0) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                          className={`w-4 h-4 ${i < gift.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                         />
                       ))}
                     </div>
                     <span className="text-sm text-gray-600">({gift.rating}/5)</span>
                   </div>
-                  <span className="text-2xl font-bold text-tiffany-600">{gift.price}</span>
+                  
+                 <span className="text-2xl font-bold text-tiffany-600 flex items-baseline">
+  {gift.price}
+  <span className="ml-1 text-sm font-semibold text-tiffany-300">ريال</span>
+</span>
                 </div>
+                
+                {/* Offers Section */}
                 <div className="flex flex-wrap gap-2 mt-4">
                   {gift.offers && gift.offers.length > 0 ? (
                     gift.offers.map((offer, idx) => (
@@ -88,13 +98,7 @@ const GiftSuggestions: React.FC<GiftSuggestionsProps> = ({ gifts }) => {
                       </Button>
                     ))
                   ) : (
-                    <Button
-                      className="bg-tiffany-500 hover:bg-tiffany-600 text-white rounded-lg flex items-center gap-2 px-4 py-2 text-sm w-full"
-                      onClick={() => window.open(gift.url, '_blank')}
-                    >
-                      <ShoppingBag className="w-4 h-4" />
-                      اشترِ الآن
-                    </Button>
+                    <span className="text-gray-400 text-sm">لا توجد متاجر متاحة حالياً</span>
                   )}
                 </div>
               </div>
