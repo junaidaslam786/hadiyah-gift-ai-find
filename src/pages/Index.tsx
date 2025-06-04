@@ -174,7 +174,7 @@ const Index = () => {
     <div className="min-h-screen bg-white font-arabic">
       <HeroSection />
       <HowItWorksSection />
-      <RecommendedGiftSections />
+      {/* <RecommendedGiftSections /> */}
       <GiftFinderForm onSubmit={handleFormSubmit} />
       <div id="gift-suggestions">
         <GiftSuggestions gifts={suggestions} />

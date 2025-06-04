@@ -7,19 +7,12 @@ export type GiftProduct = {
   url: string;
 };
 
-export type OfferGifts = {
-  offer: string;
-  offerLogo: string;   // Logo or brand banner
-  offerUrl: string;
-  gifts: GiftProduct[];
-};
 
-export const recommendedGiftSections: OfferGifts[] = [
-  {
-    offer: 'Armani Beauty',
-    offerLogo: 'https://media.go2speed.org/brand/files/dcm/1569/ArmaniBeauty.png',
-    offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/en/perfume/womens-perfumes/s%C3%AC/s%C3%AC-passione-50ml-gift-set/ww-00613-arm.html?srsltid=AfmBOoq_iEfjovBiy8_XDe7ZgoeKA_hIdyA0UfTVbd-wBpWAMxFpKjPS&utm_source=chatgpt.com',
-    gifts: [
+
+export const recommendedGiftProducts: GiftProduct[] = [
+  
+    
+  
       {
         id: 'a1',
         name: 'مجموعة عطر سي باسيوني',
@@ -44,13 +37,8 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400&h=400&fit=crop&crop=center',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1569&aff_id=150702&source=https://www.armanibeauty.ae/',
       },
-    ],
-  },
-  {
-    offer: 'al giftcards',
-    offerLogo: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=200&h=100&fit=crop',
-    offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1775&aff_id=150702&file_id=106801',
-    gifts: [
+
+  
       {
         id: 'g1',
         name: 'بطاقة هدايا سنتربوينت',
@@ -75,13 +63,8 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1775&aff_id=150702&source=https://www.algiftcards.com/',
       },
-    ],
-  },
-  {
-    offer: 'Bloomingdales',
-    offerLogo: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&h=100&fit=crop',
-    offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1637&aff_id=150702&file_id=106354',
-    gifts: [
+   
+  
       {
         id: 'b1',
         name: 'بطاقة هدايا بلومينغديلز الإلكترونية',
@@ -106,13 +89,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1637&aff_id=150702&source=https://bloomingdales.ae/',
       },
-    ],
-  },
-  {
-    offer: 'Dyson',
-    offerLogo: 'https://media.go2speed.org/brand/files/dcm/1549/20241130143707-Dyson.png',
-    offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1549&aff_id=150702&file_id=106787',
-    gifts: [
+   
       {
         id: 'd1',
         name: 'مجفف شعر دايسون سوبرسونيك™',
@@ -137,13 +114,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1549&aff_id=150702&source=https://www.dyson.ae/',
       },
-    ],
-  },
-  {
-    offer: 'Gameseal',
-    offerLogo: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=200&h=100&fit=crop',
-    offerUrl: 'https://gameseal.com/gift-cards/',
-    gifts: [
+   
       {
         id: 'gs1',
         name: 'بطاقة هدايا ستيم',
@@ -168,13 +139,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=400',
         url: 'https://gameseal.com/',
       },
-    ],
-  },
-  {
-    offer: 'Cartlow',
-    offerLogo: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=100&fit=crop',
-    offerUrl: 'https://www.cartlow.com/saudi/ar',
-    gifts: [
+ 
       {
         id: 'c1',
         name: 'سماعات آبل إيربودز برو',
@@ -199,13 +164,7 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
         url: 'https://www.cartlow.com/',
       },
-    ],
-  },
-  {
-    offer: 'Mamas and Papas',
-    offerLogo: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=200&h=100&fit=crop',
-    offerUrl: 'https://go.urtrackinglink.com/aff_c?offer_id=1638&aff_id=150702&file_id=106399',
-    gifts: [
+ 
       {
         id: 'mp1',
         name: 'مجموعة عربة أطفال هدايا',
@@ -230,6 +189,4 @@ export const recommendedGiftSections: OfferGifts[] = [
         image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400',
         url: 'https://go.urtrackinglink.com/aff_c?offer_id=1638&aff_id=150702&source=https://mamasandpapas.ae/',
       },
-    ],
-  },
 ];
